@@ -29,7 +29,7 @@ class Store
      * @param string $token
      * @param Environment|null $environment if none provided, production will be used.
      */
-    public function __construct($filiation, $token, Environment $environment = null)
+    public function __construct($filiation, $token, ?Environment $environment = null)
     {
         $environment = $environment != null ? $environment : Environment::production();
 

@@ -47,7 +47,7 @@ abstract class AbstractService
      * @param Store $store
      * @param LoggerInterface|null $logger
      */
-    public function __construct(Store $store, LoggerInterface $logger = null)
+    public function __construct(Store $store, ?LoggerInterface $logger = null)
     {
         $this->store = $store;
         $this->logger = $logger;

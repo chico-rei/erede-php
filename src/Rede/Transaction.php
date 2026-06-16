@@ -337,7 +337,7 @@ class Transaction implements RedeSerializable, RedeUnserializable
      * @return array
      * @see    \JsonSerializable::jsonSerialize()
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         $capture = null;
 
@@ -446,7 +446,9 @@ class Transaction implements RedeSerializable, RedeUnserializable
                 continue;
             }
 
-            $this->$property = $value;
+            if (property_exists($this, $property)) {
+                $this->$property = $value;
+            }
         }
 
         return $this;

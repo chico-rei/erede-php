@@ -1,4 +1,4 @@
-FROM php:7.2-cli
+FROM php:8.2-cli
 LABEL maintainer="neto.joaobatista@gmail.com"
 
 RUN apt -y update && apt -y install zlib1g-dev zip

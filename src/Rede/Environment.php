@@ -104,7 +104,7 @@ class Environment implements RedeSerializable
     /**
      * @return array
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         $consumer = new stdClass();
         $consumer->ip = $this->ip;
