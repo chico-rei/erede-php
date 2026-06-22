@@ -93,10 +93,6 @@ abstract class AbstractService
             $userAgent .= sprintf(' %s/%s', $this->platform, $this->platformVersion);
         }
 
-        if (is_resource($this->curl)) {
-            curl_close($this->curl);
-        }
-
         $curlVersion = curl_version();
 
         if (is_array($curlVersion)) {
@@ -193,8 +189,6 @@ abstract class AbstractService
         if (curl_errno($this->curl)) {
             throw new RuntimeException(sprintf('Curl error[%s]: %s', curl_errno($this->curl), curl_error($this->curl)));
         }
-
-        curl_close($this->curl);
 
         $this->curl = null;
 
